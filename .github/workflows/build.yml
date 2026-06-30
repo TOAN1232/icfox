@@ -25,15 +25,7 @@ jobs:
 
     - name: Compile icfox ESP
       shell: cmd
-      run: |
-        cd icfox
-        cl /nologo /O2 /EHsc /MD /std:c++17 /I. ^
-            main.cpp Renderer.cpp ^
-            /link ^
-            user32.lib gdi32.lib ^
-            d3d11.lib dxgi.lib d3dcompiler.lib dwmapi.lib ^
-            /SUBSYSTEM:WINDOWS ^
-            /OUT:icfox.exe
+      run: cd icfox && cl /nologo /O2 /EHsc /MD /std:c++17 /I. main.cpp Renderer.cpp /link user32.lib gdi32.lib d3d11.lib dxgi.lib d3dcompiler.lib dwmapi.lib /SUBSYSTEM:WINDOWS /OUT:icfox.exe
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
