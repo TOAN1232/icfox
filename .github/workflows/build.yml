@@ -27,7 +27,7 @@ jobs:
       shell: cmd
       run: |
         cd icfox
-        cl /nologo /O2 /EHsc /MD /I. ^
+        cl /nologo /O2 /EHsc /MD /std:c++17 /I. ^
             main.cpp Renderer.cpp ^
             /link ^
             user32.lib gdi32.lib ^
