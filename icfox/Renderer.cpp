@@ -12,6 +12,17 @@
 #pragma comment(lib, "dwmapi.lib")
 
 namespace Renderer {
+    // Global variable definitions
+    IDXGISwapChain* swapChain = nullptr;
+    ID3D11Device* device = nullptr;
+    ID3D11DeviceContext* context = nullptr;
+    ID3D11RenderTargetView* renderTargetView = nullptr;
+    ID3D11Texture2D* backBuffer = nullptr;
+    HWND overlayWindow = nullptr;
+    HWND targetWindow = nullptr;
+    WNDCLASSEX wc = {};
+    ID3D11Buffer* lineBuffer = nullptr;
+    ID3D11Buffer* rectBuffer = nullptr;
 
     ID3D11VertexShader* g_vertexShader = nullptr;
     ID3D11PixelShader* g_pixelShader = nullptr;

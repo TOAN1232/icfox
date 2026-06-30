@@ -6,10 +6,10 @@
 #include <iostream>
 
 namespace Memory {
-    HANDLE hProcess = NULL;
-    DWORD processId = 0;
-    HWND hwnd = NULL;
-    uintptr_t baseAddress = 0;
+    extern HANDLE hProcess;
+    extern DWORD processId;
+    extern HWND hwnd;
+    extern uintptr_t baseAddress;
 
     // Find window by partial title match
     HWND FindRobloxWindow() {

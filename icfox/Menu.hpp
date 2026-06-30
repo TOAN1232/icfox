@@ -10,21 +10,13 @@ namespace Menu {
         bool* value;
     };
 
-    std::vector<MenuItem> items = {
-        {"ESP Enabled", &Config::ESPEnabled},
-        {"Box ESP", &Config::BoxESP},
-        {"Line ESP", &Config::LineESP},
-        {"Health Bar", &Config::HealthBar},
-        {"Name Tags", &Config::NameTags},
-        {"Distance", &Config::Distance},
-        {"Team Check", &Config::TeamCheck},
-    };
+    extern std::vector<MenuItem> items;
+    extern int selectedItem;
 
-    int selectedItem = 0;
-    const int menuX = 20;
-    const int menuY = 20;
-    const int itemHeight = 20;
-    const int menuWidth = 200;
+    constexpr int menuX = 20;
+    constexpr int menuY = 20;
+    constexpr int itemHeight = 20;
+    constexpr int menuWidth = 200;
 
     void Render() {
         if (!Config::MenuOpen) return;

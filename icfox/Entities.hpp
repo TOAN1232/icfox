@@ -27,13 +27,13 @@ struct PlayerEntity {
 };
 
 namespace Entities {
-    std::vector<PlayerEntity> players;
-    PlayerEntity localPlayer;
-    uintptr_t dataModel = 0;
-    uintptr_t visualEngine = 0;
-    Matrix4x4 viewMatrix;
-    int screenWidth = 1920;
-    int screenHeight = 1080;
+    extern std::vector<PlayerEntity> players;
+    extern PlayerEntity localPlayer;
+    extern uintptr_t dataModel;
+    extern uintptr_t visualEngine;
+    extern Matrix4x4 viewMatrix;
+    extern int screenWidth;
+    extern int screenHeight;
 
     // Read a Roblox string (Name/DisplayName)
     std::string ReadInstanceName(uintptr_t instance) {

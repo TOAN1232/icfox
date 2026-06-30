@@ -2,6 +2,7 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
+#include <vector>
 
 #include "Memory.hpp"
 #include "Renderer.hpp"
@@ -9,6 +10,37 @@
 #include "ESP.hpp"
 #include "Menu.hpp"
 #include "Config.hpp"
+
+// Global variable definitions for namespaces defined in headers
+namespace Memory {
+    HANDLE hProcess = NULL;
+    DWORD processId = 0;
+    HWND hwnd = NULL;
+    uintptr_t baseAddress = 0;
+}
+
+namespace Entities {
+    std::vector<PlayerEntity> players;
+    PlayerEntity localPlayer;
+    uintptr_t dataModel = 0;
+    uintptr_t visualEngine = 0;
+    Matrix4x4 viewMatrix;
+    int screenWidth = 1920;
+    int screenHeight = 1080;
+}
+
+namespace Menu {
+    std::vector<MenuItem> items = {
+        {"ESP Enabled", &Config::ESPEnabled},
+        {"Box ESP", &Config::BoxESP},
+        {"Line ESP", &Config::LineESP},
+        {"Health Bar", &Config::HealthBar},
+        {"Name Tags", &Config::NameTags},
+        {"Distance", &Config::Distance},
+        {"Team Check", &Config::TeamCheck},
+    };
+    int selectedItem = 0;
+}
 
 // Global flag for running
 bool g_Running = true;

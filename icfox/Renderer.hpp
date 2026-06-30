@@ -13,24 +13,24 @@
 
 namespace Renderer {
     // DX11 objects
-    IDXGISwapChain* swapChain = nullptr;
-    ID3D11Device* device = nullptr;
-    ID3D11DeviceContext* context = nullptr;
-    ID3D11RenderTargetView* renderTargetView = nullptr;
-    ID3D11Texture2D* backBuffer = nullptr;
+    extern IDXGISwapChain* swapChain;
+    extern ID3D11Device* device;
+    extern ID3D11DeviceContext* context;
+    extern ID3D11RenderTargetView* renderTargetView;
+    extern ID3D11Texture2D* backBuffer;
 
     // Window
-    HWND overlayWindow = nullptr;
-    HWND targetWindow = nullptr;
-    WNDCLASSEX wc = {};
+    extern HWND overlayWindow;
+    extern HWND targetWindow;
+    extern WNDCLASSEX wc;
 
     struct Vertex {
         float x, y, z;
         uint32_t color;
     };
 
-    ID3D11Buffer* lineBuffer = nullptr;
-    ID3D11Buffer* rectBuffer = nullptr;
+    extern ID3D11Buffer* lineBuffer;
+    extern ID3D11Buffer* rectBuffer;
 
     bool InitWindow(HINSTANCE instance);
     bool InitD3D();
